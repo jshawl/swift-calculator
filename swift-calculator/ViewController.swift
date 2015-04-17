@@ -9,8 +9,12 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
 
     @IBOutlet weak var numberDisplay: UILabel!
+    @IBAction func clear(sender: AnyObject) {
+        numberDisplay?.text = ""
+    }
     @IBAction func numberPress(sender: AnyObject) {
         if let number = sender.currentTitle!{
             numberDisplay?.text = numberDisplay!.text! + number
