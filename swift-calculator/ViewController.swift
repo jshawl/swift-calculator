@@ -10,6 +10,12 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var numberDisplay: UILabel!
+    @IBAction func numberPress(sender: AnyObject) {
+        if let number = sender.currentTitle!{
+            numberDisplay?.text = numberDisplay!.text! + number
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
