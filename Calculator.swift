@@ -27,6 +27,9 @@ class Calculator {
         if operand == "-"{
             return n - n2
         }
+        if operand == "✕"{
+            return n * n2
+        }
         return n
     }
     

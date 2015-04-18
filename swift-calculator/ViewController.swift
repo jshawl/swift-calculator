@@ -28,6 +28,9 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var numberDisplay: UILabel!
     @IBAction func operand(sender: AnyObject) {
+        if calculator.isEvaluateable() {
+            evaluate( sender )
+        }
         calculator.operand = sender.currentTitle!!
         if calculator.n? != nil {
             if calculator.n2? != nil {
