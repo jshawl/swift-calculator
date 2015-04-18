@@ -22,8 +22,10 @@ class Calculator {
     
     func eval( n: Int, operand:String, n2:Int ) -> Int {
         if operand == "+"{
-            println("operand was plus")
             return n + n2
+        }
+        if operand == "-"{
+            return n - n2
         }
         return n
     }
