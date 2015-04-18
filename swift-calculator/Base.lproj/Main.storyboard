@@ -40,6 +40,16 @@
                                             <action selector="clear:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eBC-th-NqK"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hUV-qc-FsC">
+                                        <rect key="frame" x="182" y="263" width="50" height="50"/>
+                                        <color key="backgroundColor" red="0.92393733359999997" green="0.93333727899999996" blue="0.92988091279999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="+">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="operand:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kCY-ly-n90"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vZs-aj-wEQ">
                                         <rect key="frame" x="66" y="147" width="50" height="50"/>
                                         <color key="backgroundColor" red="0.92393733359999997" green="0.93333727899999996" blue="0.92988091279999996" alpha="1" colorSpace="calibratedRGB"/>
@@ -142,14 +152,14 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hUV-qc-FsC">
-                                        <rect key="frame" x="182" y="263" width="50" height="50"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N83-Me-uXx">
+                                        <rect key="frame" x="182" y="321" width="50" height="50"/>
                                         <color key="backgroundColor" red="0.92393733359999997" green="0.93333727899999996" blue="0.92988091279999996" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="+">
+                                        <state key="normal" title="=">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="operand:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kCY-ly-n90"/>
+                                            <action selector="eval:" destination="BYZ-38-t0r" eventType="touchUpInside" id="60Z-v7-gqc"/>
                                         </connections>
                                     </button>
                                 </subviews>

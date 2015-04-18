@@ -35,7 +35,14 @@ class Calculator {
     func reset(){
         n = nil
         n2 = nil
-        operand = nil
+        operand = nil    
+    }
+    
+    func isEvaluateable() -> Bool {
+        let n = self.n != nil
+        let n2 = self.n2 != nil
+        let operand = self.operand != nil
+        return n && n2 && operand
     }
     
 }

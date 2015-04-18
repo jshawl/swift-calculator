@@ -10,17 +10,28 @@ import UIKit
 
 class ViewController: UIViewController {
     var calculator = Calculator()
+    
+    func evaluate( sender: AnyObject){
+        let result = calculator.eval( calculator.n!, operand:calculator.operand!, n2: calculator.n2! )
+        numberDisplay?.text = "\(result)"
+        calculator.reset()
+        calculator.n = result
+        calculator.operand = sender.currentTitle!!
+    }
+    
+    @IBAction func eval(sender: AnyObject) {
+        if calculator.isEvaluateable() {
+          evaluate( sender )
+        }
+    }
+    
+    
     @IBOutlet weak var numberDisplay: UILabel!
     @IBAction func operand(sender: AnyObject) {
         calculator.operand = sender.currentTitle!!
-        //numberDisplay?.text = numberDisplay!.text! + calculator.operand!
         if calculator.n? != nil {
             if calculator.n2? != nil {
-                let result = calculator.eval( calculator.n!, operand:calculator.operand!, n2: calculator.n2! )
-                numberDisplay?.text = "\(result)"
-                calculator.reset()
-                calculator.n = result
-                calculator.operand = sender.currentTitle!!
+                evaluate( sender )
             }
         }
     }
