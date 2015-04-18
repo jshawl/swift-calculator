@@ -27,8 +27,15 @@ class Calculator {
         }
         return n
     }
+    
     func add(n:Int, n2:Int) -> Int{
         return n + n2
+    }
+    
+    func reset(){
+        n = nil
+        n2 = nil
+        operand = nil
     }
     
 }

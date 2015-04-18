@@ -13,26 +13,32 @@ class ViewController: UIViewController {
     @IBOutlet weak var numberDisplay: UILabel!
     @IBAction func operand(sender: AnyObject) {
         calculator.operand = sender.currentTitle!!
-        numberDisplay?.text = numberDisplay!.text! + calculator.operand!
+        //numberDisplay?.text = numberDisplay!.text! + calculator.operand!
         if calculator.n? != nil {
             if calculator.n2? != nil {
                 let result = calculator.eval( calculator.n!, operand:calculator.operand!, n2: calculator.n2! )
                 numberDisplay?.text = "\(result)"
-                calculator = Calculator()
+                calculator.reset()
+                calculator.n = result
+                calculator.operand = sender.currentTitle!!
             }
         }
     }
     @IBAction func clear(sender: AnyObject) {
         numberDisplay?.text = ""
+        calculator.reset()
     }
     @IBAction func numberPress(sender: AnyObject) {
         var n = calculator.n ?? 0
+        var n2 = calculator.n2 ?? 0
         if let number = sender.currentTitle!{
-            numberDisplay?.text = numberDisplay!.text! + number
+            
             if calculator.operand == nil {
+                numberDisplay?.text = numberDisplay!.text! + number
                 calculator.n = n + number.toInt()!
             } else {
-                calculator.n2 = n + number.toInt()!
+                numberDisplay?.text = number
+                calculator.n2 = n2 + number.toInt()!
             }
         }
     }
