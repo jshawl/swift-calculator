@@ -17,24 +17,19 @@ class ViewController: UIViewController {
         numberDisplay?.text = "\(result)"
         calculator.reset()
         calculator.n = result
-        calculator.operand = sender.currentTitle!!
     }
     
     @IBAction func eval(sender: AnyObject) {
         if calculator.n2? == nil {
             calculator.n2 = numberDisplay!.text!.toInt()!
         }
-        //calculator.debug()
         if calculator.isEvaluateable() {
             evaluate( sender )
         }
-        
     }
-    
     
     @IBOutlet weak var numberDisplay: UILabel!
     @IBAction func operand(sender: AnyObject) {
-        
         if calculator.n? == nil {
             calculator.n = numberDisplay!.text!.toInt()
         } else {
@@ -46,7 +41,6 @@ class ViewController: UIViewController {
             evaluate( sender )
         }
         calculator.operand = sender.currentTitle!!
-        //calculator.debug()
         overWriteDisplay = true
     }
     @IBAction func clear(sender: AnyObject) {
@@ -54,8 +48,6 @@ class ViewController: UIViewController {
         calculator.reset()
     }
     @IBAction func numberPress(sender: AnyObject) {
-        var n = calculator.n ?? 0
-        var n2 = calculator.n2 ?? 0
         if let number = sender.currentTitle!{
             if overWriteDisplay == true {
                 numberDisplay?.text = number
