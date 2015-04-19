@@ -16,11 +16,11 @@ class Calculator {
         
     }
     
-    var n:Int?
-    var n2:Int?
+    var n:Double?
+    var n2:Double?
     var operand:String?
     
-    func eval( n: Int, operand:String, n2:Int ) -> Int {
+    func eval( n: Double, operand:String, n2:Double ) -> Double {
         if operand == "+"{
             return n + n2
         }
@@ -33,7 +33,7 @@ class Calculator {
         return n
     }
     
-    func add(n:Int, n2:Int) -> Int{
+    func add(n:Double, n2:Double) -> Double{
         return n + n2
     }
     

@@ -211,6 +211,17 @@
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Oha-Eu-gXx" secondAttribute="trailing" constant="8" id="wwA-la-aIq"/>
                                         </constraints>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RnG-8u-dV8">
+                                        <rect key="frame" x="124" y="322" width="50" height="50"/>
+                                        <color key="backgroundColor" red="0.92393733359999997" green="0.93333727899999996" blue="0.92988091279999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title=".">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="numberPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SAL-Nw-u6L"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>

@@ -14,14 +14,15 @@ class ViewController: UIViewController {
     
     func evaluate( sender: AnyObject){
         let result = calculator.eval( calculator.n!, operand:calculator.operand!, n2: calculator.n2! )
-        numberDisplay?.text = "\(result)"
+        let replaced = "\(result)".stringByReplacingOccurrencesOfString(".0", withString: "", options: nil, range: nil)
+        numberDisplay.text = replaced
         calculator.reset()
         calculator.n = result
     }
     
     @IBAction func eval(sender: AnyObject) {
         if calculator.n2? == nil {
-            calculator.n2 = numberDisplay!.text!.toInt()!
+            calculator.n2 = NSString(string: numberDisplay!.text!).doubleValue
         }
         if calculator.isEvaluateable() {
             evaluate( sender )
@@ -31,10 +32,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var numberDisplay: UILabel!
     @IBAction func operand(sender: AnyObject) {
         if calculator.n? == nil {
-            calculator.n = numberDisplay!.text!.toInt()
+            calculator.n = NSString(string:  numberDisplay!.text! ).doubleValue
         } else {
             if calculator.n2? == nil {
-                calculator.n2 = numberDisplay!.text!.toInt()!
+                calculator.n2 = NSString(string: numberDisplay!.text! ).doubleValue
             }
         }
         if calculator.isEvaluateable() {
