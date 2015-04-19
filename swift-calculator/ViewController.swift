@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     var calculator = Calculator()
+    var overWriteDisplay:Bool = true
     
     func evaluate( sender: AnyObject){
         let result = calculator.eval( calculator.n!, operand:calculator.operand!, n2: calculator.n2! )
@@ -20,9 +21,15 @@ class ViewController: UIViewController {
     }
     
     @IBAction func eval(sender: AnyObject) {
-        if calculator.isEvaluateable() {
-          evaluate( sender )
+        if calculator.n2? == nil {
+            println("here d00d")
+            println( numberDisplay!.text! )
+            calculator.n2 = numberDisplay!.text!.toInt()!
         }
+        if calculator.isEvaluateable() {
+            evaluate( sender )
+        }
+        calculator.debug()
     }
     
     
@@ -32,11 +39,17 @@ class ViewController: UIViewController {
             evaluate( sender )
         }
         calculator.operand = sender.currentTitle!!
-        if calculator.n? != nil {
-            if calculator.n2? != nil {
+        if calculator.n? == nil {
+            calculator.n = numberDisplay!.text!.toInt()
+        } else {
+            if calculator.n2? == nil {
+                calculator.n2 = numberDisplay!.text!.toInt()!
+            } else {
                 evaluate( sender )
             }
         }
+        calculator.debug()
+        overWriteDisplay = true
     }
     @IBAction func clear(sender: AnyObject) {
         numberDisplay?.text = ""
@@ -46,13 +59,11 @@ class ViewController: UIViewController {
         var n = calculator.n ?? 0
         var n2 = calculator.n2 ?? 0
         if let number = sender.currentTitle!{
-            
-            if calculator.operand == nil {
-                numberDisplay?.text = numberDisplay!.text! + number
-                calculator.n = n + number.toInt()!
-            } else {
+            if overWriteDisplay == true {
                 numberDisplay?.text = number
-                calculator.n2 = n2 + number.toInt()!
+                overWriteDisplay = false
+            } else {
+                numberDisplay?.text = numberDisplay!.text! + number
             }
         }
     }

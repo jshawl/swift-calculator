@@ -50,5 +50,11 @@ class Calculator {
         return n && n2 && operand
     }
     
+    func debug(){
+        println("n: \(self.n?)")
+        println("n2: \(self.n2?)")
+        println("operand: \(self.operand?)")
+    }
+    
 }
 
