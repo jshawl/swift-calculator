@@ -35,19 +35,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var numberDisplay: UILabel!
     @IBAction func operand(sender: AnyObject) {
         
-        calculator.operand = sender.currentTitle!!
         if calculator.n? == nil {
             calculator.n = numberDisplay!.text!.toInt()
         } else {
             if calculator.n2? == nil {
                 calculator.n2 = numberDisplay!.text!.toInt()!
-            } else {
-                evaluate( sender )
             }
         }
         if calculator.isEvaluateable() {
             evaluate( sender )
         }
+        calculator.operand = sender.currentTitle!!
         //calculator.debug()
         overWriteDisplay = true
     }
