@@ -58,7 +58,7 @@ class ViewController: UIViewController {
     }
     @IBAction func clear(sender: AnyObject) {
         numberDisplay?.text = ""
-        calculator.reset()
+        //calculator.reset()
     }
     @IBAction func numberPress(sender: AnyObject) {
         if let number = sender.currentTitle!{
