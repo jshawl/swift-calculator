@@ -29,6 +29,18 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func flip(sender: AnyObject) {
+        numberDisplay?.text? = "\(numberDisplay!.text!.toInt()! * -1 )"
+    }
+    
+    @IBAction func divideByOneHundred(sender: AnyObject) {
+        
+        var num = numberDisplay!.text! as NSString
+        var text = num.doubleValue / 100
+        numberDisplay?.text? = "\(text)"
+    }
+    
+    
     @IBOutlet weak var numberDisplay: UILabel!
     @IBAction func operand(sender: AnyObject) {
         if calculator.n? == nil {
